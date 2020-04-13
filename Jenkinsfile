@@ -17,7 +17,7 @@ node('slaves'){
 
      stage('Build'){
     //     sh 'GOOS=linux go build -o main main.go'
-        sh "zip ${commitID()}.zip functions.py lambda_function.py"
+        sh "zip ${commitID()}.zip functions.py"
     }
 
     stage('Push'){
