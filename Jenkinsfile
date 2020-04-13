@@ -20,7 +20,7 @@ node('slaves'){
         sh "echo '111111111111111'"
         sh "echo functions.py > functions.py"
         sh "echo 2222222"
-        sh "sudo yum install zip" 
+        sh "yum install zip" 
         sh "zip ${commitID()}.zip functions.py"
     }
 
