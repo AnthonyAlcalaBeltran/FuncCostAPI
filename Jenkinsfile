@@ -24,7 +24,7 @@ node('slaves'){
     }
 
     stage('Push'){
-        s3Upload(file:"${commitID()}.zip", bucket:"${bucket}", path:"${functionName}")    
+        s3Upload(file:"${commitID()}.zip", bucket:"${bucket}", path:"${functionName}/${commitID()}.zip")    
         //    aws "s3 cp '${commitID()}' s3://'${bucket}'"
     }
 
