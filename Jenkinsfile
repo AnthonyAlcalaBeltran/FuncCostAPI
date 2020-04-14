@@ -4,6 +4,7 @@ def region = 'us-east-1'
 
 node('slaves'){
     stage('Checkout'){
+        sh "rm *"
         checkout scm
     }
 
