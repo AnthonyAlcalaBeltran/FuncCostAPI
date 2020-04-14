@@ -23,7 +23,8 @@ node('slaves'){
     }
 
     stage('Push'){
-        aws "s3 cp '${commitID()}' s3://'${bucket}'"
+        s3Upload(file:"${commitID()}.zip", bucket:"${bucket}")    
+        //    aws "s3 cp '${commitID()}' s3://'${bucket}'"
     }
 
     stage('Deploy'){
