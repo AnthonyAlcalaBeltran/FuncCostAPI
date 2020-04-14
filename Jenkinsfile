@@ -29,10 +29,14 @@ node('slaves'){
     }
 
     stage('Deploy'){
-        sh "aws lambda update-function-code --function-name ${functionName} \
-                --s3-bucket ${bucket} \
-                --s3-key ${commitID()}.zip \
-                --region ${region}"
+        aws lambda update-function-code --function-name "${functionName}" \
+                --s3-bucket "${bucket}" \
+                --s3-key "${commitID()}.zip" \
+                --region "${region}"
+        //sh "aws lambda update-function-code --function-name ${functionName} \
+        //        --s3-bucket ${bucket} \
+        //        --s3-key ${commitID()}.zip \
+        //        --region ${region}"
     }
 }
 
