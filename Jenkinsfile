@@ -31,7 +31,6 @@ node('slaves'){
 
     stage('Deploy'){
         sh  "echo 'el deploy es por lambda'"
-        sh  "echo 'fin_gracias_slu2'"
         //aws lambda update-function-code --function-name "${functionName}" \
         //        --s3-bucket "${bucket}" \
         //        --s3-key "${commitID()}.zip" \
