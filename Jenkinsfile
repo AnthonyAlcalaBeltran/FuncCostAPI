@@ -23,7 +23,7 @@ node('slaves'){
     }
 
     stage('Push'){
-        sh "aws s3 cp ${commitID()} s3://${bucket}"
+        aws s3 cp "${commitID()}" s3:"//${bucket}"
     }
 
     stage('Deploy'){
