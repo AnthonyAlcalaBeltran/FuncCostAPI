@@ -20,7 +20,7 @@ node('slaves'){
         sh "echo functions.py > functions.py"
         sh "ls -l"
         sh "install zip"
-        sh "zip zipFile: '${commitID()}.zip' , glob: ''"
+        zip zipFile: '${commitID()}.zip' , glob: ''
     //    sh "zip ${commitID()}.zip functions.py"
     }
 
