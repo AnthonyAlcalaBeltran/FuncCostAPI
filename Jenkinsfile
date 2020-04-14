@@ -20,6 +20,7 @@ node('slaves'){
         sh "ls -l"
         sh "echo '${commitID()}.zip'"
         zip zipFile:"${commitID()}.zip" , glob:''
+        sh "echo 'zipeado con exito'"
     }
 
     stage('Push'){
