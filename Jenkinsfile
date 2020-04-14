@@ -19,13 +19,11 @@ node('slaves'){
     //     sh 'GOOS=linux go build -o main main.go'
         sh "echo functions.py > functions.py"
         sh "ls -l"
-    //    sh "install zip"
         zip zipFile: '${commitID()}.zip' , glob: ''
-    //    sh "zip ${commitID()}.zip functions.py"
     }
 
     stage('Push'){
-        sh "aws s3 cp ${commitID()}.zip s3://${bucket}"
+        aws s3 cp ${commitID()}.zip s3://${bucket}
     }
 
     stage('Deploy'){
